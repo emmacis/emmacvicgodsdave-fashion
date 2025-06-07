@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Emmacvicgodsdave Fashion</title>
+    <link rel="stylesheet" href="collection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">EMMACVICGODSDAVE</div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="co 2.html">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Collections Hero -->
+    <section class="collections-hero">
+        <div class="hero-text">
+            <h1>Our Collections</h1>
+            <p>Discover curated fashion lines for every season</p>
+        </div>
+    </section>
+
+    <!-- Collection Filters -->
+    <div class="collection-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="summer">Summer</button>
+        <button class="filter-btn" data-filter="winter">Winter</button>
+        <button class="filter-btn" data-filter="spring">Spring</button>
+        <button class="filter-btn" data-filter="autumn">Autumn</button>
+    </div>
+
+    <!-- Collections Grid -->
+    <section class="collections-grid">
+        <!-- Collection 1 -->
+        <div class="collection-card" data-category="summer">
+            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Summer Collection">
+            <div class="collection-info">
+                <h3>Summer Vibes</h3>
+                <p>Lightweight fabrics and vibrant colors</p>
+                <a href="shop.html?collection=summer" class="btn">View Collection</a>
+            </div>
+        </div>
+
+        <!-- Collection 2 -->
+        <div class="collection-card" data-category="winter">
+            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Winter Collection">
+            <div class="collection-info">
+                <h3>Winter Luxe</h3>
+                <p>Cozy knits and warm layers</p>
+                <a href="shop.html?collection=winter" class="btn">View Collection</a>
+            </div>
+        </div>
+
+        <!-- Collection 3 -->
+        <div class="collection-card" data-category="spring">
+            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Spring Collection">
+            <div class="collection-info">
+                <h3>Spring Bloom</h3>
+                <p>Floral patterns and pastel tones</p>
+                <a href="shop.html?collection=spring" class="btn">View Collection</a>
+            </div>
+        </div>
+
+        <!-- Collection 4 -->
+        <div class="collection-card" data-category="autumn">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Autumn Collection">
+            <div class="collection-info">
+                <h3>Autumn Hues</h3>
+                <p>Earthy tones and textured fabrics</p>
+                <a href="shop.html?collection=autumn" class="btn">View Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Can't Find What You're Looking For?</h2>
+        <a href="co 2.html" class="btn btn-outline">Contact Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Paste your existing footer here -->
+    </footer>
+
+    <!-- JavaScript for Collection Filters -->
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter collections
+                const filter = btn.dataset.filter;
+                const collections = document.querySelectorAll('.collection-card');
+
+                collections.forEach(collection => {
+                    if (filter === 'all' || collection.dataset.category === filter) {
+                        collection.style.display = 'block';
+                    } else {
+                        collection.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
